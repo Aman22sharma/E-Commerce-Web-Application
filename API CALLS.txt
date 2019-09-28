@@ -1,0 +1,3 @@
+Homepage: https://5d76bf96515d1a0014085cf9.mockapi.io/product
+Product Details: https://5d76bf96515d1a0014085cf9.mockapi.io/product/1
+Create Order: https://5d76bf96515d1a0014085cf9.mockapi.io/order
