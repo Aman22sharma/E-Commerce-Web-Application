@@ -1,15 +1,28 @@
-function dynamicContentDetails(ob) {
+
+console.clear()
+
+let id = location.search.split('?')[1]
+console.log(id)
+
+if(document.cookie.indexOf(',counter=')>=0)
+{
+    let counter = document.cookie.split(',')[1].split('=')[1]
+    document.getElementById("badge").innerHTML = counter
+}
+
+function dynamicContentDetails(object)
+{
     let mainContainer = document.createElement('div')
     mainContainer.id = 'containerD'
-    document.getElementById('containerProduct').appendChild(mainContainer);
+    document.getElementById('details').appendChild(mainContainer);
 
     let imageSectionDiv = document.createElement('div')
     imageSectionDiv.id = 'imageSection'
 
     let imgTag = document.createElement('img')
-    imgTag.id = 'imgDetails'
-        //imgTag.id = ob.photos
-    imgTag.src = ob.preview
+     imgTag.id = 'imgDetails'
+     //imgTag.id = ob.photos
+     imgTag.src = object.preview
 
     imageSectionDiv.appendChild(imgTag)
 
@@ -19,11 +32,11 @@ function dynamicContentDetails(ob) {
     // console.log(productDetailsDiv);
 
     let h1 = document.createElement('h1')
-    let h1Text = document.createTextNode(ob.name)
+    let h1Text = document.createTextNode(object.name)
     h1.appendChild(h1Text)
 
     let h4 = document.createElement('h4')
-    let h4Text = document.createTextNode(ob.brand)
+    let h4Text = document.createTextNode(object.brand)
     h4.appendChild(h4Text)
     console.log(h4);
 
@@ -31,7 +44,7 @@ function dynamicContentDetails(ob) {
     detailsDiv.id = 'details'
 
     let h3DetailsDiv = document.createElement('h3')
-    let h3DetailsText = document.createTextNode('Rs ' + ob.price)
+    let h3DetailsText = document.createTextNode('Rs ' + object.price)
     h3DetailsDiv.appendChild(h3DetailsText)
 
     let h3 = document.createElement('h3')
@@ -39,7 +52,7 @@ function dynamicContentDetails(ob) {
     h3.appendChild(h3Text)
 
     let para = document.createElement('p')
-    let paraText = document.createTextNode(ob.description)
+    let paraText = document.createTextNode(object.description)
     para.appendChild(paraText)
 
     let productPreviewDiv = document.createElement('div')
@@ -51,15 +64,17 @@ function dynamicContentDetails(ob) {
     productPreviewDiv.appendChild(h3ProductPreviewDiv)
 
     let i;
-    for (i = 0; i < ob.photos.length; i++) {
+    for(i=0; i<object.photos.length; i++)
+    {
         let imgTagProductPreviewDiv = document.createElement('img')
         imgTagProductPreviewDiv.id = 'previewImg'
-        imgTagProductPreviewDiv.src = ob.photos[i]
-        imgTagProductPreviewDiv.onclick = function(event) {
+        imgTagProductPreviewDiv.src = object.photos[i]
+        imgTagProductPreviewDiv.onclick = function(event)
+        {
             console.log("clicked" + this.src)
-            imgTag.src = ob.photos[i]
-            document.getElementById("imgDetails").src = this.src
-
+            imgTag.src = object.photos[i]
+            document.getElementById("imgDetails").src = this.src 
+            
         }
         productPreviewDiv.appendChild(imgTagProductPreviewDiv)
     }
@@ -71,10 +86,12 @@ function dynamicContentDetails(ob) {
     buttonDiv.appendChild(buttonTag)
 
     buttonText = document.createTextNode('Add to Cart')
-    buttonTag.onclick = function() {
-        let order = id + " "
+    buttonTag.onclick  =   function()
+    {
+        let order = id+" "
         let counter = 1
-        if (document.cookie.indexOf(',counter=') >= 0) {
+        if(document.cookie.indexOf(',counter=')>=0)
+        {
             order = id + " " + document.cookie.split(',')[0].split('=')[1]
             counter = Number(document.cookie.split(',')[1].split('=')[1]) + 1
         }
@@ -95,8 +112,8 @@ function dynamicContentDetails(ob) {
     detailsDiv.appendChild(h3)
     detailsDiv.appendChild(para)
     productDetailsDiv.appendChild(productPreviewDiv)
-
-
+    
+    
     productDetailsDiv.appendChild(buttonDiv)
 
 
@@ -104,24 +121,27 @@ function dynamicContentDetails(ob) {
 }
 
 
-
 // BACKEND CALLING
 
 let httpRequest = new XMLHttpRequest()
-
-httpRequest.onreadystatechange = function() {
-    if (this.readyState === 4 && this.status == 200) {
-        console.log('connected!!');
-
-        let contentDetails = JSON.parse(this.responseText) {
-            console.log(contentDetails);
-            dynamicContentDetails(contentDetails)
+{
+    httpRequest.onreadystatechange = function()
+    {
+        if(this.readyState === 4 && this.status == 200)
+        {
+            console.log('connected!!');
+            let contentDetails = JSON.parse(this.responseText)
+            {
+                console.log(contentDetails);
+                dynamicContentDetails(contentDetails)
+            }
         }
-    } else {
-        console.log('not connected!');
+        else
+        {
+            console.log('not connected!');
+        }
     }
 }
 
-
-httpRequest.open('GET', 'https://5d76bf96515d1a0014085cf9.mockapi.io/product/' + id, true)
-httpRequest.send()
+httpRequest.open('GET', 'https://5d76bf96515d1a0014085cf9.mockapi.io/product/'+id, true)
+httpRequest.send()  

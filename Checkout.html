@@ -12,89 +12,120 @@
     <link rel="stylesheet" href="Style.css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <style>
-        #kindablock {
-            display: flex;
-            justify-content: space-between;
+                
+        #checkout
+        {
+            padding: 90px 50px;
         }
-        
-        #total-items {
-            font-size: 1.2em;
+        #kindablock
+        {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 20px;
         }
-        
-        #left-check {
-            width: 60%;
-        }
-        
-        #right-check {
-            width: 40%;
-            max-height: 155px;
-            box-shadow: 5px 5px 10px #ccc;
-            border-radius: 10px;
-            padding: 10px 20px;
-            box-sizing: border-box;
-        }
-        
-        #right-check h2 {
-            margin: 0;
-            color: #007eff;
-        }
-        
-        .desc span {
-            font-weight: bold;
-            color: black;
-            font-size: 1.2em;
-        }
-        
-        .item {
-            box-shadow: 5px 5px 10px #ccc;
-            border-radius: 10px;
-            padding: 10px;
-            overflow: hidden;
-            width: 70%;
-            margin-bottom: 15px;
-        }
-        
-        .item h4 {
-            margin: 0;
-        }
-        
-        .item img {
-            width: 70px;
+        #box-image
+        {
+            width: 80px;
             float: left;
-            margin-right: 10px;
-            border-radius: 5px;
+            border-radius: 10px;
+            border-color: #A569BD;
+            margin-right: 50px;
         }
-        
-        #left-check .desc {
-            margin-bottom: 0;
+        #boxContainer
+        {
+            display: grid;
+            grid-gap: 20px;
+            padding: 20px;
+            width: 100%;
+            /* float: left; */
         }
-        
-        #confirm {
-            text-align: center;
+        #box
+        {
+            background-color: white;
+            box-shadow: 1px 2px 6px 2px rgb(219, 219, 219);
+            border-radius: 10px;
+            border: 2px solid #A569BD;
+            /* border-color: #A569BD; */
+            width: 100%;
+            /* margin: auto */
+            padding: 20px 10px;
         }
-        
-        #confirm i {
-            font-size: 15em;
-            color: #007eff;
+        #box:hover
+        {
+            box-shadow: 0px 1px 3px 2px rgb(185, 185, 185);
         }
-        
-        #confirm h1,
-        p {
-            margin: 0;
-            margin-bottom: 10px;
+        #totalContainer
+        {
+            width: 50%;
+            padding: 20px;
+            margin: auto;
+            border: 2px solid #A569BD;
+            /* color: white; */
+            /* background-color: #A569BD; */
+            border-radius: 10px;
+            box-shadow: 1px 2px 6px 2px rgb(219, 219, 219);
         }
-        
-        button {
-            display: block;
+        #totalContainer:hover
+        {
+            box-shadow: 0px 1px 3px 2px rgb(185, 185, 185);
+        }
+        button
+        {
+            padding: 8px 12px;
+            background-color: #A569BD;
             border: none;
-            outline: none;
-            padding: 10px 20px;
-            background-color: #007eff;
-            color: #fff;
             border-radius: 5px;
             cursor: pointer;
-            font-family: 'Lato', sans-serif;
-            font-size: 1em;
+        }
+        button a
+        {
+            text-decoration: none;
+            color: white;
+            font-size: 15px;
+        }
+        button:hover
+        {
+            background-color: rgb(6, 202, 137);
+        }
+        button a:focus
+        {
+            outline: none;
+        }
+
+        /* ----------------------------- MEDIA QUERY --------------------------- */
+
+        @media(max-width: 800px)
+        {
+            #box-image
+            {
+                width: 60px;
+                margin-right: 20px;
+            }
+            h3, h4
+            {
+                font-size: 14px;
+            }
+            h2
+            {
+                font-size: 18px;
+            }
+            #checkout
+            {
+                padding: 90px 20px;
+            }
+        }
+        @media(max-width: 555px)
+        {
+            #kindablock
+            {
+                display: grid;
+                grid-template-columns: 1fr;
+            }    
+            #boxContainer
+            {
+                padding: 20px;
+                width: 80%;
+            }
         }
     </style>
 
@@ -124,21 +155,26 @@
                     <div class="search-container">
                         <button type="submit"><i class="fa fa-search"></i></button>
                         <input type="text" placeholder="search for clothing and accesories.." name="search" size="35">
-                        <a href="Addtocart.html" target="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                        <span><img id="image"src="https://lh3.googleusercontent.com/w-aRgas0uxG8jZ3nYvKST-8wMsbVF0dFjdVYuCXzh1aNIe2UWX-TyKxdUsnWE9wlfYiaLhs1SU_-kSYNSx_Q3ALxUvBIVvGGmJnw1IzTx4u-gPZX4lke-Nva8fEFXvIwZ41fwmTKxouJgkAJm5tfdh2SK8fOE7zo38AjIL5U9NvLjDO4HuLbZIFZ0z0YRbMs3mNwqHKHky0pfA45x79fPPRaiadmVunAU8In7aYYImcXImCdLu57d_p29nRrLs0n01TaJzR931qiAARnb9BWhZeO2k6h0CgN3khIXLa4Ep4bY4XQ1wS4AdbA5999v-STlpMRw6psBPqDOqnUZXGKuLFlICCelAKz8A-vjYw_asoRTuUYDwNkiZJvY6Lx0k6ptXAdw_gBRPxRWA8eL7z1xojA58f8yVWRqRDOpN2Akslb5Z3W0fDN6dB_A8cnj-8A3gLbfFKA8pm-de0IZtWzq_FhGzKwRfknZ3omX2khhhZxExcHEWbsAFo3pwppYd25O4g-AOFc1kQr3ZLfs41NsK3i6i7H2A7BDHziCHxWlqvWcQv5upVflg8un36t7dt1TRvK88i9nEWqngw0hkG4WHW86vXBEs7Zgcl9RxaxucXuKjCToVe55XqtXlGbXQISYdZKgPCTxibh1w4ahJbn3aHhcxvPi9Xk=w678-h903-no"></span>
+                        <a href="#" target="#"><i class="fa fa-shopping-cart" aria-hidden="true"><div id="badge"> 0 </div></i></a>
+                        <span><img id="image" src="https://lh3.googleusercontent.com/w-aRgas0uxG8jZ3nYvKST-8wMsbVF0dFjdVYuCXzh1aNIe2UWX-TyKxdUsnWE9wlfYiaLhs1SU_-kSYNSx_Q3ALxUvBIVvGGmJnw1IzTx4u-gPZX4lke-Nva8fEFXvIwZ41fwmTKxouJgkAJm5tfdh2SK8fOE7zo38AjIL5U9NvLjDO4HuLbZIFZ0z0YRbMs3mNwqHKHky0pfA45x79fPPRaiadmVunAU8In7aYYImcXImCdLu57d_p29nRrLs0n01TaJzR931qiAARnb9BWhZeO2k6h0CgN3khIXLa4Ep4bY4XQ1wS4AdbA5999v-STlpMRw6psBPqDOqnUZXGKuLFlICCelAKz8A-vjYw_asoRTuUYDwNkiZJvY6Lx0k6ptXAdw_gBRPxRWA8eL7z1xojA58f8yVWRqRDOpN2Akslb5Z3W0fDN6dB_A8cnj-8A3gLbfFKA8pm-de0IZtWzq_FhGzKwRfknZ3omX2khhhZxExcHEWbsAFo3pwppYd25O4g-AOFc1kQr3ZLfs41NsK3i6i7H2A7BDHziCHxWlqvWcQv5upVflg8un36t7dt1TRvK88i9nEWqngw0hkG4WHW86vXBEs7Zgcl9RxaxucXuKjCToVe55XqtXlGbXQISYdZKgPCTxibh1w4ahJbn3aHhcxvPi9Xk=w678-h903-no"></span>
 
                     </div>
                 </div>
         </nav>
     </header>
     <main>
-
-        <div class="container" id="checkout">
-            <h1>Checkout</h1>
-            <p id="total-items">Total items: </p>
-
+        
+        <div id="checkout">
+            <!-- <div class="container" id="checkout">
+                <h1>Checkout</h1>
+                <p id="total-items">Total items: </p> -->
+            <!-- <h1>Your Cart Item(${counter}) </h1> -->
+            <h1 id="totalItemHeading">Your Cart Item</h1>
+            <h3 id="totalItem"> Total Items: 0 </h3>
+    
             <div id="kindablock">
-                <div id="left-check">
+            <!-- <div id="kindablock"> -->
+                <!-- <div id="left-check">
                 </div>
                 <div id="right-check">
                     <div id="total">
@@ -146,9 +182,8 @@
                         <p class="desc">Total price: <span></span></p>
                         <a href="OrderConfirmatiion.html" onclick="localStorage.clear();"><button>Place Order</button></a>
                     </div>
-                </div>
+                </div>  -->
             </div>
-
         </div>
 
     </main>
@@ -208,7 +243,7 @@
 
     <footer class="down-footer">
         <div class="footer-bottom">
-            &copy; All right reserved | Designed by Aman kr Sharma
+            &copy; All right reserved | Aman kr Sharma | 28 Sep 2019 EDYODA
         </div>
 
     </footer>

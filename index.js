@@ -40,6 +40,10 @@
 */
 
 
+
+let  contentTitle;
+console.log(document.cookie);
+
 function createClothingCardsDynamically(clothingCardObj) {
     console.log(clothingCardObj);
 
@@ -112,19 +116,20 @@ httpRequest.onreadystatechange = function() {
     if (this.readyState === 4) {
         if (this.status == 200) {
             console.log('call was succesfull');
-            var clothingCardList = JSON.parse(this.responseText);
-            for (i = 0; i < clothingCardList.length; i++) {
-                //console.log(clothingCardList[i].brand);
-                // console.log(createClothingCardsDynamically(clothingCardList[i]));
-                // clothingCard.appendChild(createClothingCardsDynamically(clothingCardList[i]));
-                console.log(clothingCardList[i].isAccessory);
-                if (!clothingCardList[i].isAccessory) {
-                    clothingCard.appendChild(createClothingCardsDynamically(clothingCardList[i]));
+            contentTitle = JSON.parse(this.responseText);
+                if (document.cookie.indexOf(",counter=") >= 0) {
+                    var counter = document.cookie.split(",")[1].split("=")[1];
+                    document.getElementById("badge").innerHTML = counter;
+                }
+            for (i = 0; i <  contentTitle.length; i++) {
+                console.log( contentTitle[i].isAccessory);
+                if (! contentTitle[i].isAccessory) {
+                    clothingCard.appendChild(createClothingCardsDynamically( contentTitle[i]));
                 } else {
-                    accessoriesCard.appendChild(createClothingCardsDynamically(clothingCardList[i]));
+                    accessoriesCard.appendChild(createClothingCardsDynamically( contentTitle[i]));
                 }
             }
-        }
+        }else console.log('Error in Api call');
     }
 }
 
