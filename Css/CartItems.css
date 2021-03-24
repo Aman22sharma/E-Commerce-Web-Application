@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+#cartMainContainer{
+    /* padding: 90px 50px; */
+    padding: 100px;
+}
+#cartMainContainer h1{
+    font-size: 20px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#cartMainContainer h3{
+    font-size: 20px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#cartContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+#box-image{
+    width: 80px;
+    float: left;
+    border-radius: 10px;
+    border-color: #A569BD;
+    margin-right: 50px;
+}
+#boxContainer{
+    display: grid;
+    grid-gap: 20px;
+    padding: 20px;
+    width: 100%;
+    /* float: left; */
+}
+#box{
+    background-color: white;
+    box-shadow: 1px 2px 6px 2px rgb(219, 219, 219);
+    border-radius: 10px;
+    border: 2px solid #A569BD;
+    /* border-color: #A569BD; */
+    width: 100%;
+    /* margin: auto */
+    padding: 20px 10px;
+}
+#box:hover{
+    box-shadow: 0px 1px 3px 2px rgb(185, 185, 185);
+}
+#totalContainer{
+    width: 50%;
+    padding: 20px;
+    margin: auto;
+    border: 2px solid #A569BD;
+    /* color: white; */
+    /* background-color: #A569BD; */
+    border-radius: 10px;
+    box-shadow: 1px 2px 6px 2px rgb(219, 219, 219);
+}
+#totalContainer:hover{
+    box-shadow: 0px 1px 3px 2px rgb(185, 185, 185);
+}
+#cartContainer h3{
+    font-size: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#cartContainer h4{
+    font-size: 20px;
+    color: #A569BD;;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#totalContainer h2{
+    font-size: 30px;
+}
+#totalContainer h4{
+    font-size: 20px;
+}
+button{
+    padding: 8px 12px;
+    background-color: #A569BD;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button a{
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+}
+button a:hover{
+    text-decoration: none;
+    color: white;
+}
+button:hover{
+    background-color: rgb(6, 202, 137);
+    text-decoration: none;
+}
+button a:focus{
+    outline: none;
+    text-decoration: none;
+}
+
+/* ----------------------------- MEDIA QUERY --------------------------- */
+
+@media(max-width: 800px)
+{
+    #box-image
+    {
+        width: 60px;
+        margin-right: 20px;
+    }
+    #cartContainer{
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+    #cartContainer h3{
+        font-size: 10px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    #cartContainer h4{
+        font-size: 20px;
+        color: #A569BD;;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    #cartMainContainer
+    {
+        padding: 20px 20px;
+    }
+    #totalContainer h2{
+        font-size: 10px;
+    }
+    #totalContainer h4{
+        font-size: 10px;
+    }
+}
+@media(max-width: 555px)
+{
+    #cartContainer
+    {
+        display: grid;
+        grid-template-columns: 1fr;
+    }    
+    #boxContainer
+    {
+        padding: 20px;
+        width: 80%;
+    }
+}
+
+

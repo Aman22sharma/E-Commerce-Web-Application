@@ -7,8 +7,8 @@
     <!-- Logo-Image -->
     <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvtnkuO0m2_IsMkvFslks3DhdcOAg3Mm9RIg&usqp=CAU" type="image/gif" sizes="16x16">
     <title>ShopLane</title>
+    <link rel="stylesheet" href="./Css/CartItems.css">
     <link rel="stylesheet" href="./Css/Style.css">
-    <link rel="stylesheet" href="/Css/ProductDetails.css">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
@@ -45,11 +45,37 @@
         </div>
         </div>
       </nav>
+     
     <!------------------------------------------- Body Content --------------------------------------------------------->
-    <div id="details">
-        
-    </div>
-    <!-----------------------------------------------Top Footer ----------------------------------------------------->
+    <main>
+        <div id="cartMainContainer">
+            <!-- <h1>Your Cart Item(${counter}) </h1> -->
+            <h1 id="totalItemHeading">Your Cart Item</h1>
+            <h3 id="totalItem"> Total Items: 0 </h3>
+    
+            <div id="cartContainer">
+                <!-- JS rendered code -->
+            </div>
+        </div>
+        <!-- <div class="container" id="checkout">
+            <h1>Checkout</h1>
+            <p id="total-items">Total items: </p>
+
+            <div id="kindablock">
+                <div id="left-check">
+                </div>
+                <div id="right-check">
+                    <div id="total">
+                        <h2>Total amount</h2>
+                        <p class="desc">Total price: <span></span></p>
+                        <a href="OrderConfirmatiion.html" onclick="localStorage.clear();"><button>Place Order</button></a>
+                    </div>
+                </div> -->
+            <!-- </div>
+        </div> -->
+    </main>
+
+    <!-------------------------------------------Top Footer----------------------------------------------->
     <div class="footer">
         <div class="footer-content">
             <div class="footer-section about">
@@ -102,16 +128,16 @@
             </div>
         </div>
     </div>
+
     <!----------------------------------------Footer Section------------------------------------------------>
 
     <footer class="down-footer">
         <div class="footer-bottom">
             &copy; All right reserved | Aman kr Sharma | 28 Sep 2019 EDYODA
         </div>
-
     </footer>
         <!------------------------------ Boostrap CDN Links ------------------------------------------------>
-        <script type="text/javascript" src="./ProductDetails.js"></script>
+        <script type="text/javascript" src="./CartItems.js"></script>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

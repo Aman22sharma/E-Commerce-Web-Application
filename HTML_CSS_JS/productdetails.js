@@ -1,32 +1,3 @@
-/*<!----------------------------------Reference for js (Details Container) --------------------------------------->
-<!-- <div class="p-4 d-flex bd-highlight container" id="main-container">
-    <div class="flex-fill bd-highlight" style="float: left;">
-        <div style="width: 60%;float: left;" class="card">
-            <img class="card-img" src="https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7579188/2018/11/5/66490b64-32de-44b4-a6e4-fe36f1c040051541402833548-United-Colors-of-Benetton-Men-Sweatshirts-1271541402833444-4.jpg" alt="Card image cap">
-        </div>
-    </div>
-    <div class="p-2 flex-fill bd-highlight">
-        <h1 class="card-title">
-            Men Navy Blue Solid Sweatshirt
-        </h1>
-        <div class="container">
-            <h3 class="card-title">United Colors Of Benetton</h3>
-            <h3 class="card-title">Rs 2599</h3>
-            <p class="card-title">Navy Solid Sweatshirt With Patchwork, Has A Round Neck, Long Sleeves, Straight Hem</p>
-            <h3 class="card-title">Product Preview</h3>
-            <div class="d-flex justify-content-start">
-                <div class="p-1 bg-info"><img class="card-img" src="https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7579188/2018/11/5/66490b64-32de-44b4-a6e4-fe36f1c040051541402833548-United-Colors-of-Benetton-Men-Sweatshirts-1271541402833444-4.jpg" alt="Card image cap"></div>
-                <div class="p-1 bg-warning"><img class="card-img" src="https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7579188/2018/11/5/66490b64-32de-44b4-a6e4-fe36f1c040051541402833548-United-Colors-of-Benetton-Men-Sweatshirts-1271541402833444-4.jpg" alt="Card image cap"></div>
-                <div class="p-1 bg-primary"><img class="card-img" src="https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7579188/2018/11/5/66490b64-32de-44b4-a6e4-fe36f1c040051541402833548-United-Colors-of-Benetton-Men-Sweatshirts-1271541402833444-4.jpg" alt="Card image cap"></div>
-                <div class="p-1 bg-warning"><img class="card-img" src="https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7579188/2018/11/5/66490b64-32de-44b4-a6e4-fe36f1c040051541402833548-United-Colors-of-Benetton-Men-Sweatshirts-1271541402833444-4.jpg" alt="Card image cap"></div>
-                <div class="p-1 bg-primary"><img class="card-img" src="https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7579188/2018/11/5/66490b64-32de-44b4-a6e4-fe36f1c040051541402833548-United-Colors-of-Benetton-Men-Sweatshirts-1271541402833444-4.jpg" alt="Card image cap"></div>
-            </div>
-            <div class="container">
-                <button>Add to card</button>
-            </div>
-        </div>
-    </div>
-</div> -->*/
 
 console.clear()
 
@@ -36,7 +7,7 @@ console.log(id)
 if(document.cookie.indexOf(',counter=')>=0)
 {
     let counter = document.cookie.split(',')[1].split('=')[1]
-    document.getElementById("cart-badge").innerHTML = counter
+    document.getElementById("badge").innerHTML = counter
 }
 
 function dynamicContentDetails(object)
@@ -73,7 +44,6 @@ function dynamicContentDetails(object)
     detailsDiv.id = 'details'
 
     let h3DetailsDiv = document.createElement('h3')
-    h3DetailsDiv.id='price';
     let h3DetailsText = document.createTextNode('Rs ' + object.price)
     h3DetailsDiv.appendChild(h3DetailsText)
 
@@ -126,7 +96,7 @@ function dynamicContentDetails(object)
             counter = Number(document.cookie.split(',')[1].split('=')[1]) + 1
         }
         document.cookie = "orderId=" + order + ",counter=" + counter
-        document.getElementById("cart-badge").innerHTML = counter
+        document.getElementById("badge").innerHTML = counter
         console.log(document.cookie)
     }
     buttonTag.appendChild(buttonText)
@@ -142,12 +112,16 @@ function dynamicContentDetails(object)
     detailsDiv.appendChild(h3)
     detailsDiv.appendChild(para)
     productDetailsDiv.appendChild(productPreviewDiv)
+    
+    
     productDetailsDiv.appendChild(buttonDiv)
+
 
     return mainContainer
 }
 
-//----------------------------------API Call--------------------------------------//
+
+// BACKEND CALLING
 
 let httpRequest = new XMLHttpRequest()
 {

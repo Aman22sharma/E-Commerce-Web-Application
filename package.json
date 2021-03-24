@@ -1,0 +1,23 @@
+{
+  "name": "shoplane",
+  "version": "1.0.2",
+  "description": "E-commerce dynamic shoping website",
+  "main": "Product.html",
+  "scripts": {
+    "test": "npm run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aman22sharma/E-Commerce-Web-Application.git"
+  },
+  "keywords": [
+    "Shoping",
+    "website"
+  ],
+  "author": "Aman Kumar Sharma",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Aman22sharma/E-Commerce-Web-Application/issues"
+  },
+  "homepage": "https://github.com/Aman22sharma/E-Commerce-Web-Application#readme"
+}

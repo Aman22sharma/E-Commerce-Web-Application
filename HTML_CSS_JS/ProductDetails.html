@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ecommerce Website</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./slick-1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="./slick-1.8.1/slick/slick-theme.css">
+    <link rel="stylesheet" href="Style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <style>
+        #containerProduct {
+            padding-top: 80px;
+        }
+        
+        #containerD {
+            width: 90%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            padding: 80px 40px;
+        }
+        
+        #imageSection {
+            width: 80%;
+            margin: auto;
+        }
+        
+        #imageSection img {
+            width: 100%;
+            float: right;
+            border-radius: 10px;
+            box-shadow: 1px 2px 6px 2px rgb(219, 219, 219);
+        }
+        
+        #imageSection img:hover {
+            box-shadow: 1px 0px 9px 1px rgb(3, 122, 122);
+        }
+        
+        #productDetails {
+            width: 100%;
+        }
+        
+        h1 {
+            font-size: 35px;
+            letter-spacing: 1px;
+            word-spacing: 2px;
+        }
+        
+        h4 {
+            font-size: 15px;
+            font-weight: bold;
+            color: rgb(3, 122, 122);
+            letter-spacing: 1px;
+            word-spacing: 2px;
+        }
+        
+        #productPreview {
+            padding-bottom: 10px;
+        }
+        
+        #productPreview>img {
+            width: 50px;
+            padding: 10px 10px;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+        
+        p {
+            font-size: 15px;
+            word-spacing: 2px;
+            letter-spacing: 1px;
+            line-height: 25px;
+        }
+        
+        button {
+            padding: 10px 15px;
+            color: white;
+            background-color: rgb(3, 122, 122);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        
+        button a {
+            text-decoration: none;
+            font-size: 18px;
+        }
+        
+        button:hover {
+            background-color: rgb(3, 94, 94);
+        }
+        
+        button a:focus {
+            outline: none;
+        }
+        /* ----------------------------- MEDIA QUERY --------------------------- */
+        
+        @media(max-width: 1300px) {
+            h1 {
+                font-size: 28px;
+            }
+            #productPreview>img {
+                width: 40px;
+                padding: 10px 10px;
+                padding-bottom: 30px;
+            }
+            button {
+                padding: 8px 13px;
+                background-color: rgb(3, 122, 122);
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+        }
+        
+        @media(max-width: 1170px) {
+            h1 {
+                font-size: 22px;
+            }
+            #productPreview>img {
+                width: 40px;
+                padding: 10px 10px;
+                padding-bottom: 30px;
+            }
+            button a {
+                font-size: 15px;
+            }
+            h4,
+            p {
+                font-size: 13px;
+            }
+            h3 {
+                font-size: 15px;
+            }
+        }
+        
+        @media(max-width: 900px) {
+            /* #containerProduct */
+            #containerD {
+                width: 60%;
+                margin: auto;
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+            #imageSection {
+                width: 100%;
+                text-align: center;
+            }
+            #imageSection img {
+                text-align: center;
+                width: 70%;
+                float: none;
+            }
+            #productDetails {
+                width: 100%;
+            }
+            #button {
+                text-align: center;
+            }
+        }
+        
+        @media(max-width: 650px) {
+            #containerD {
+                width: 80%;
+            }
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="nav">
+                <input type="checkbox" id="nav-check">
+                <div class="nav-header">
+                    <div class="nav-title">
+                        <span class="title">SHOP</span>LANE
+                    </div>
+                </div>
+                <div class="nav-btn">
+                    <label for="nav-check">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+                </div>
+                <div class="nav-links">
+                    <a href="#clothing-section" target="#">CLOTHING</a>
+                    <a href="#accessories-section" target="#">ACCESORIES</a>
+                    <div class="search-container">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                        <input type="text" placeholder="search for clothing and accesories.." name="search" size="35">
+                        <a href="Checkout.html"><i class="fa fa-shopping-cart" aria-hidden="true"><div id="badge"> 0 </div></i></a>
+                        <span><img id="image" src="https://lh3.googleusercontent.com/w-aRgas0uxG8jZ3nYvKST-8wMsbVF0dFjdVYuCXzh1aNIe2UWX-TyKxdUsnWE9wlfYiaLhs1SU_-kSYNSx_Q3ALxUvBIVvGGmJnw1IzTx4u-gPZX4lke-Nva8fEFXvIwZ41fwmTKxouJgkAJm5tfdh2SK8fOE7zo38AjIL5U9NvLjDO4HuLbZIFZ0z0YRbMs3mNwqHKHky0pfA45x79fPPRaiadmVunAU8In7aYYImcXImCdLu57d_p29nRrLs0n01TaJzR931qiAARnb9BWhZeO2k6h0CgN3khIXLa4Ep4bY4XQ1wS4AdbA5999v-STlpMRw6psBPqDOqnUZXGKuLFlICCelAKz8A-vjYw_asoRTuUYDwNkiZJvY6Lx0k6ptXAdw_gBRPxRWA8eL7z1xojA58f8yVWRqRDOpN2Akslb5Z3W0fDN6dB_A8cnj-8A3gLbfFKA8pm-de0IZtWzq_FhGzKwRfknZ3omX2khhhZxExcHEWbsAFo3pwppYd25O4g-AOFc1kQr3ZLfs41NsK3i6i7H2A7BDHziCHxWlqvWcQv5upVflg8un36t7dt1TRvK88i9nEWqngw0hkG4WHW86vXBEs7Zgcl9RxaxucXuKjCToVe55XqtXlGbXQISYdZKgPCTxibh1w4ahJbn3aHhcxvPi9Xk=w678-h903-no"></span>
+
+                    </div>
+                </div>
+        </nav>
+    </header>
+
+
+
+    <main>
+
+        <div class="container" id="details">
+            <div id="left"></div>
+            <div id="right"></div>
+        </div>
+    </main>
+
+    <div class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h1 class="logo-text">
+                    <sapn style="color: #A569BD;font-family: 'Luckiest Guy', cursive;">SHOP</sapn>LANE
+                </h1>
+                <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit commodi, quas dignissimos perferendis et sapiente praesentium eligendi numquam officiis corrupti.
+                </P>
+                <div class="contact">
+                    <span><i class="fa fa-phone"></i>&nbsp +91 8918185459</span>
+                    <span><i class="fa fa-envelope"></i>&nbsp kumaraman.rose@gmail.com</span>
+                </div>
+                <div class="socials">
+                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-github"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-section links">
+                <h2 style="margin-left: 35px;">HELPFUL LINKS</h2>
+                <br>
+                <ul>
+                    <li><a href="./Home.html">Home</a></li>
+                    <li><a href="#clothing-section">Accesories</a></li>
+                    <li><a href="##accessories-section">Clothing</a></li>
+
+                </ul>
+            </div>
+            <div class="footer-section partner">
+                <h2 style="margin-left: 35px;">OUR PARTNERS</h2>
+                <br>
+                <ul>
+                    <li><a href="#">ZARA</a></li>
+                    <li><a href="#">PANTALONES</a></li>
+                    <li><a href="#">LEVIS</a></li>
+                    <li><a href="#">UCB</a></li>
+                    <li><a href="#">+MANY MORE</a></li>
+
+                </ul>
+
+            </div>
+            <div class="footer-section contact-form">
+                <h2>CONTACT US</h2>
+                <br>
+                <form>
+                    <input type="email" name="emial" class="text-input contact-input" placeholder="Your email address....">
+                    <textarea name="Message" class="text-input contact-input" placeholder="Your message......"></textarea>
+                    <button type="submit" class="btn btn-big"><i class="fa fa-envelope" style="margin-right: 10px;"></i>Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="down-footer">
+        <div class="footer-bottom">
+            &copy; All right reserved | Aman kr Sharma | 28 Sep 2019 EDYODA
+        </div>
+
+    </footer>
+
+    <script type="text/javascript" src="./productdetails.js"></script>
+</body>
+
+</html>

@@ -1,183 +1,341 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ecommerce Website</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Logo-Image -->
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvtnkuO0m2_IsMkvFslks3DhdcOAg3Mm9RIg&usqp=CAU" type="image/gif" sizes="16x16">
+    <title>ShopLane</title>
+    <link rel="stylesheet" href="./Css/Style.css">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./slick-1.8.1/slick/slick.css">
-    <link rel="stylesheet" href="./slick-1.8.1/slick/slick-theme.css">
-    <link rel="stylesheet" href="Style.css">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
-
 <body>
+    <!------------------------------------------- Navigation Bar ------------------------------------------------------>
+    <nav class="navbar navbar-expand-lg navbar-dark" id="navigation-bar">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <a class="navbar-brand" href="./Home.html">ShopLane</a>
+          <ul class="navbar-nav mr-auto justify-content-center">
+            <li class="nav-item active">
+              <a class="nav-link" href="#" style="background-color: rgb(21, 54, 163);">All Products<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#clothing-container">Clothes<span class="sr-only"></span></a>
+              </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#accessories-container">Accessories<span class="sr-only"></span></a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0 justify-content-center">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" id="myInput"aria-label="Search">
+            <button class="btn my-2 my-sm-0" type="submit">Search</button>
+          </form>
+          <a href="./CartItems.html"><button type="button" class="btn btn-dark" id="cart-button"  data-toggle="tooltip" data-placement="bottom" title="Your Cart Items">
+            <span class="fa fa-shopping-cart" id="cart-icon"></span>
+            <span class="badge badge-light" id="cart-badge">0</span>
+          </button></a>
+          <div class="font-weight-bold circle rounded-circle align-items-cente position-relative"
+          style="background-color: #9471C1;width: 45px;height: 45px;margin-left: 50px;">
+         <img class="rounded-circle" src="https://www.w3schools.com/w3css/img_avatar.png" alt="" height="45px" width="45px">
+        </div>
+        </div>
+      </nav>
+     <!------------------------------------------- Body Content --------------------------------------------------------->
 
-    <!-----------------------------Header Section------------------------------------>
+    <!-----------------------------------------Carousel Section------------------------------------------>
+    <div id="carouselExampleIndicators" class="carousel slide container-fluid" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="./Images/Banner_image1.png" alt="First slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="./Images/Banner_image2.png" alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="./Images/Banner_image3.png" alt="Third slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="./Images/Banner_image4.png" alt="Third slide">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
 
-    <header>
-        <nav>
-            <div class="nav">
-                <input type="checkbox" id="nav-check">
-                <div class="nav-header">
-                    <div class="nav-title">
-                        <span class="title"><a href="/Home.html">SHOP</span></a>LANE
-                    </div>
-                </div>
-                <div class="nav-btn">
-                    <label for="nav-check">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </label>
-                </div>
-                <div class="nav-links">
-                    <a href="clothing-section#" target="#">CLOTHING</a>
-                    <a href="#accessories-section" style="background-color:#A569BD;color:white;" target="#">ACCESORIES</a>
-                    <div class="search-container">
-                        <button type="submit"><i class="fa fa-search"></i></button>
-                        <input type="text" placeholder="search for clothing and accesories.." name="search" size="35">
-                        <a href="Checkout.html"><i class="fa fa-shopping-cart" aria-hidden="true"><div id="badge"> 0 </div></i></a>
-                        <span><img id="image"src="https://lh3.googleusercontent.com/w-aRgas0uxG8jZ3nYvKST-8wMsbVF0dFjdVYuCXzh1aNIe2UWX-TyKxdUsnWE9wlfYiaLhs1SU_-kSYNSx_Q3ALxUvBIVvGGmJnw1IzTx4u-gPZX4lke-Nva8fEFXvIwZ41fwmTKxouJgkAJm5tfdh2SK8fOE7zo38AjIL5U9NvLjDO4HuLbZIFZ0z0YRbMs3mNwqHKHky0pfA45x79fPPRaiadmVunAU8In7aYYImcXImCdLu57d_p29nRrLs0n01TaJzR931qiAARnb9BWhZeO2k6h0CgN3khIXLa4Ep4bY4XQ1wS4AdbA5999v-STlpMRw6psBPqDOqnUZXGKuLFlICCelAKz8A-vjYw_asoRTuUYDwNkiZJvY6Lx0k6ptXAdw_gBRPxRWA8eL7z1xojA58f8yVWRqRDOpN2Akslb5Z3W0fDN6dB_A8cnj-8A3gLbfFKA8pm-de0IZtWzq_FhGzKwRfknZ3omX2khhhZxExcHEWbsAFo3pwppYd25O4g-AOFc1kQr3ZLfs41NsK3i6i7H2A7BDHziCHxWlqvWcQv5upVflg8un36t7dt1TRvK88i9nEWqngw0hkG4WHW86vXBEs7Zgcl9RxaxucXuKjCToVe55XqtXlGbXQISYdZKgPCTxibh1w4ahJbn3aHhcxvPi9Xk=w678-h903-no"></span>
-
-                    </div>
-                </div>
+      <div class="container" id="clothing-heading">
+        <h1 style="text-align: center;padding-top: 15px;">Clothings for Mens & Womens</h1>
+      </div>
+      <div class="card-deck" id="clothing-container">
+        <!-- <div class="card">
+          <img class="card-img" src="https://imgur.com/KtGxwnN.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <h5 class="card-title">Card title</h5>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img" src="https://imgur.com/KtGxwnN.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img" src="https://imgur.com/KtGxwnN.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+        <div class="card">
+            <img class="card-img" src="https://imgur.com/KtGxwnN.png" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
             </div>
-        </nav>
-    </header>
-    <div>
-        <section class="carasual-banner">
-            <div class="banner-wrapper">
-                <div>
-                    <img src="https://i.imgur.com/KtGxwnN.png">
+          </div> -->
+      </div>
+
+      <div class="container" id="clothing-heading">
+        <h1 style="text-align: center;padding-top: 15px;">Accessories for Mens & Womens</h1>
+      </div>
+      <div class="card-deck" id="accessories-container">
+         <!-- <div class="card"> -->
+          <!-- <img class="card-img" src="https://imgur.com/KtGxwnN.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img" src="https://imgur.com/KtGxwnN.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img" src="https://imgur.com/KtGxwnN.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+        <div class="card">
+            <img class="card-img" src="https://imgur.com/KtGxwnN.png" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div> --> 
+          <!-- </div> -->
+      </div>
+
+      <!------------------------------------------- Testimonial Section ----------------------------------------------->
+      <div class="container-fluid" id="testimonial">
+        <section>
+            <div class="text-center mb-5">
+                <span>TESTIMONIAL</span>
+                <h2 class="font-weight-bold display-4 ">What Our <span style="color: #9471C1">Clients</span> Say?</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="bg-light position-relative px-3 mt-5 text-center py-5">
+                        <div class="my-2">
+                            <svg fill="#9471C1" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                 width="30px" height="30px" viewBox="0 0 349.078 349.078" style="enable-background:new 0 0 349.078 349.078;"
+                                 xml:space="preserve">
+        <g>
+          <path d="M198.779,322.441v-58.245c0-7.903,6.406-14.304,14.304-14.304c28.183,0,43.515-28.904,45.643-85.961h-45.643
+            c-7.897,0-14.304-6.41-14.304-14.304V26.64c0-7.9,6.406-14.301,14.304-14.301h121.69c7.896,0,14.305,6.408,14.305,14.301v122.988
+            c0,27.349-2.761,52.446-8.181,74.611c-5.568,22.722-14.115,42.587-25.398,59.049c-11.604,16.917-26.132,30.192-43.155,39.437
+            c-17.152,9.304-37.09,14.026-59.267,14.026C205.186,336.745,198.779,330.338,198.779,322.441z M14.301,249.887
+            C6.404,249.887,0,256.293,0,264.185v58.257c0,7.896,6.404,14.298,14.301,14.298c22.166,0,42.114-4.723,59.255-14.026
+            c17.032-9.244,31.558-22.508,43.161-39.437c11.29-16.462,19.836-36.328,25.404-59.061c5.423-22.165,8.178-47.263,8.178-74.6V26.628
+            c0-7.9-6.41-14.301-14.304-14.301H14.301C6.404,12.327,0,18.734,0,26.628v122.988c0,7.899,6.404,14.304,14.301,14.304h45.002
+            C57.201,220.982,42.09,249.887,14.301,249.887z"/>
+        </g>
+                        </svg>
+                        </div>
+                        <div class="px-3 text-center pb-3">
+                            <p class="font-weight-light my-3 text-secondary">Lorem ipsum dolor sit consectetur adipisicing elit. Alias amet
+                                deleniti et fugit iusto nesciunt.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="font-weight-bold circle text-white rounded-circle d-flex align-items-center justify-content-center mx-auto position-relative border border-white mt-4"
+                             style="background-color: #9471C1;width: 60px;height: 60px;">
+                            <img class="rounded-circle" src="https://www.w3schools.com/w3css/img_avatar.png" alt="" height="55px" width="55px">
+                        </div>
+                        <div class="text-center">
+                            <h5 class="font-weight-bold mt-4 mb-0" style="color: #9471C1">Ramin JD</h5>
+                            <small class="font-weight-bold" >Manager</small>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <img src="https://i.imgur.com/96OnkX7.png">
+                <div class="col-md-4">
+                    <div style="background-color: #9471C1" class="position-relative px-3 mt-5 text-center py-5">
+                        <div class="my-2">
+                            <svg fill="#fff" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                 width="30px" height="30px" viewBox="0 0 349.078 349.078" style="enable-background:new 0 0 349.078 349.078;"
+                                 xml:space="preserve">
+    <g>
+      <path d="M198.779,322.441v-58.245c0-7.903,6.406-14.304,14.304-14.304c28.183,0,43.515-28.904,45.643-85.961h-45.643
+        c-7.897,0-14.304-6.41-14.304-14.304V26.64c0-7.9,6.406-14.301,14.304-14.301h121.69c7.896,0,14.305,6.408,14.305,14.301v122.988
+        c0,27.349-2.761,52.446-8.181,74.611c-5.568,22.722-14.115,42.587-25.398,59.049c-11.604,16.917-26.132,30.192-43.155,39.437
+        c-17.152,9.304-37.09,14.026-59.267,14.026C205.186,336.745,198.779,330.338,198.779,322.441z M14.301,249.887
+        C6.404,249.887,0,256.293,0,264.185v58.257c0,7.896,6.404,14.298,14.301,14.298c22.166,0,42.114-4.723,59.255-14.026
+        c17.032-9.244,31.558-22.508,43.161-39.437c11.29-16.462,19.836-36.328,25.404-59.061c5.423-22.165,8.178-47.263,8.178-74.6V26.628
+        c0-7.9-6.41-14.301-14.304-14.301H14.301C6.404,12.327,0,18.734,0,26.628v122.988c0,7.899,6.404,14.304,14.301,14.304h45.002
+        C57.201,220.982,42.09,249.887,14.301,249.887z"/>
+    </g>
+                        </svg>
+                        </div>
+                        <div class="px-3 text-center pb-3">
+                            <p class="font-weight-light my-3 text-white">Lorem ipsum dolor sit consectetur adipisicing elit. Alias amet
+                                deleniti et fugit iusto nesciunt.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div  class="font-weight-bold circle text-white rounded-circle d-flex align-items-center justify-content-center mx-auto position-relative border border-white mt-4"
+                             style="width: 60px;height: 60px;background-color: #9471C1">
+                            <img class="rounded-circle" src="https://www.w3schools.com/w3css/img_avatar.png" alt="" height="55px" width="55px">
+                        </div>
+                        <div class="text-center">
+                            <h5 class="font-weight-bold mt-4 mb-0 " style="color: #9471C1">Semin Jee</h5>
+                            <small class="font-weight-bold"style="line-height: 1">CEO</small>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <img src="https://i.imgur.com/p0wdadG.png">
-                </div>
-                <div>
-                    <img src="https://i.imgur.com/sfjg9R8.png">
+                <div class="col-md-4">
+                    <div class="bg-light position-relative px-3 mt-5 text-center py-5">
+                        <div class="my-2">
+                            <svg fill="#9471C1" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                 width="30px" height="30px" viewBox="0 0 349.078 349.078" style="enable-background:new 0 0 349.078 349.078;"
+                                 xml:space="preserve">
+    <g>
+      <path d="M198.779,322.441v-58.245c0-7.903,6.406-14.304,14.304-14.304c28.183,0,43.515-28.904,45.643-85.961h-45.643
+        c-7.897,0-14.304-6.41-14.304-14.304V26.64c0-7.9,6.406-14.301,14.304-14.301h121.69c7.896,0,14.305,6.408,14.305,14.301v122.988
+        c0,27.349-2.761,52.446-8.181,74.611c-5.568,22.722-14.115,42.587-25.398,59.049c-11.604,16.917-26.132,30.192-43.155,39.437
+        c-17.152,9.304-37.09,14.026-59.267,14.026C205.186,336.745,198.779,330.338,198.779,322.441z M14.301,249.887
+        C6.404,249.887,0,256.293,0,264.185v58.257c0,7.896,6.404,14.298,14.301,14.298c22.166,0,42.114-4.723,59.255-14.026
+        c17.032-9.244,31.558-22.508,43.161-39.437c11.29-16.462,19.836-36.328,25.404-59.061c5.423-22.165,8.178-47.263,8.178-74.6V26.628
+        c0-7.9-6.41-14.301-14.304-14.301H14.301C6.404,12.327,0,18.734,0,26.628v122.988c0,7.899,6.404,14.304,14.301,14.304h45.002
+        C57.201,220.982,42.09,249.887,14.301,249.887z"/>
+    </g>
+                        </svg>
+                        </div>
+                        <div class="px-3 text-center pb-3">
+                            <p class="font-weight-light my-3 text-secondary">Lorem ipsum dolor sit consectetur adipisicing elit. Alias amet
+                                deleniti et fugit iusto nesciunt.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="font-weight-bold circle text-white rounded-circle d-flex align-items-center justify-content-center mx-auto position-relative border border-white mt-4"
+                             style="width: 60px;height: 60px; background-color: #9471C1">
+                            <img class="rounded-circle" src="https://www.w3schools.com/w3css/img_avatar.png" alt="" height="55px" width="55px">
+                        </div>
+                        <div class="text-center">
+                            <h5 class="font-weight-bold mt-4 mb-0 " style="color: #9471C1">Hadi Najafi</h5>
+                            <small class="font-weight-bold" style="line-height: 1">Developer</small>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
+    </div>
 
-        <!-----------------------------Clothing Section------------------------------------>
-
-        <section id="clothing-section">
-            <h1>Clothings For Mens and Womens</h1>
-            <div id="clothing-card">
-                <!--<h1>Clothings For Mens and Womens</h1>
-            <div class="card">
-                    <a href="/Home.html">
-                        <div class="thumbnail-wrapper">
-                            <img class="thumbnail" src="https://image.shutterstock.com/image-photo/beautiful-water-drop-on-dandelion-600w-789676552.jpg">
-                        </div>
-                        <div class="card-title">
-                            <h2>Tailored Jeans</h2>
-                            <p>Some text about the jeans..</p>
-                            <p class="price">$19.99</p>
-                        </div>
-                    </a>
-                </div>-->
+    <!------------------------------------------- Top Footer ---------------------------------------------->
+    <div class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h1 class="logo-text">
+                    <sapn style="color: #A569BD;font-family: 'Luckiest Guy', cursive;">SHOP</sapn>LANE
+                </h1>
+                <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit commodi, quas dignissimos perferendis et sapiente praesentium eligendi numquam officiis corrupti.
+                </P>
+                <div class="contact">
+                    <span><i class="fa fa-phone"></i>&nbsp +91 8918185459</span>
+                    <span><i class="fa fa-envelope"></i>&nbsp kumaraman.rose@gmail.com</span>
+                </div>
+                <div class="socials">
+                    <a href="https://www.linkedin.com/in/aman-kumar-sharma-2a4775159" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/aman_sharma.richel/" target="_blank"><i class="fa fa-instagram"></i></a>
+                    <a href="https://github.com/Aman22sharma" target="_blank"><i class="fa fa-github"></i></a>
+                    <a href="https://twitter.com/webdev_aman" target="_blank"><i class="fa fa-twitter"></i></a>
+                </div>
             </div>
-        </section>
+            <div class="footer-section links">
+                <h2 style="margin-left: 35px;">HELPFUL LINKS</h2>
+                <br>
+                <ul>
+                    <li><a href="./Home.html">Home</a></li>
+                    <li><a href="#clothing-section">Accesories</a></li>
+                    <li><a href="##accessories-section">Clothing</a></li>
 
-        <!-----------------------------Accessories Section------------------------------------>
-
-        <section id="accessories-section">
-            <h1>Accesories For Mens and Womens</h1>
-            <div id="accessories-card">
-                <!--<h1>Clothings For Mens and Womens</h1>
-                <div class="card">
-                    <a href="/Home.html">
-                        <div class="thumbnail-wrapper">
-                            <img class="thumbnail" src="https://image.shutterstock.com/image-photo/beautiful-water-drop-on-dandelion-600w-789676552.jpg">
-                        </div>
-                        <div class="card-title">
-                            <h2>Tailored Jeans</h2>
-                            <p>Some text about the jeans..</p>
-                            <p class="price">$19.99</p>
-                        </div>
-                    </a>
-                </div>-->
+                </ul>
             </div>
-        </section>
+            <div class="footer-section partner">
+                <h2 style="margin-left: 35px;">OUR PARTNERS</h2>
+                <br>
+                <ul>
+                    <li><a href="#">ZARA</a></li>
+                    <li><a href="#">PANTALONES</a></li>
+                    <li><a href="#">LEVIS</a></li>
+                    <li><a href="#">UCB</a></li>
+                    <li><a href="#">+MANY MORE</a></li>
 
-        <!-----------------------------Top Footter Section------------------------------------>
+                </ul>
 
-
-        <!-----------------------------Top Footter Section------------------------------------>
-
-        <div class="footer">
-            <div class="footer-content">
-                <div class="footer-section about">
-                    <h1 class="logo-text">
-                        <sapn style="color: #A569BD;font-family: 'Luckiest Guy', cursive;">SHOP</sapn>LANE
-                    </h1>
-                    <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit commodi, quas dignissimos perferendis et sapiente praesentium eligendi numquam officiis corrupti.
-                    </P>
-                    <div class="contact">
-                        <span><i class="fa fa-phone"></i>&nbsp +91 8918185459</span>
-                        <span><i class="fa fa-envelope"></i>&nbsp kumaraman.rose@gmail.com</span>
-                    </div>
-                    <div class="socials">
-                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-instagram"></i></a>
-                        <a href="#"><i class="fa fa-github"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                    </div>
-                </div>
-                <div class="footer-section links">
-                    <h2 style="margin-left: 35px;">HELPFUL LINKS</h2>
-                    <br>
-                    <ul>
-                        <li><a href="./Home.html">Home</a></li>
-                        <li><a href="#clothing-section">Accesories</a></li>
-                        <li><a href="##accessories-section">Clothing</a></li>
-
-                    </ul>
-                </div>
-                <div class="footer-section partner">
-                    <h2 style="margin-left: 35px;">OUR PARTNERS</h2>
-                    <br>
-                    <ul>
-                        <li><a href="#">ZARA</a></li>
-                        <li><a href="#">PANTALONES</a></li>
-                        <li><a href="#">LEVIS</a></li>
-                        <li><a href="#">UCB</a></li>
-                        <li><a href="#">+MANY MORE</a></li>
-
-                    </ul>
-
-                </div>
-                <div class="footer-section contact-form">
-                    <h2>CONTACT US</h2>
-                    <br>
-                    <form>
-                        <input type="email" name="emial" class="text-input contact-input" placeholder="Your email address....">
-                        <textarea name="Message" class="text-input contact-input" placeholder="Your message......"></textarea>
-                        <button type="submit" class="btn btn-big"><i class="fa fa-envelope" style="margin-right: 10px;"></i>Send</button>
-                    </form>
-                </div>
+            </div>
+            <div class="footer-section contact-form">
+                <h2>CONTACT US</h2>
+                <br>
+                <form>
+                    <input type="email" name="emial" class="text-input contact-input" placeholder="Your email address....">
+                    <textarea name="Message" class="text-input contact-input" placeholder="Your message......"></textarea>
+                    <button type="submit" class="btn btn-big"><i class="fa fa-envelope" style="margin-right: 10px;"></i>Send</button>
+                </form>
             </div>
         </div>
+    </div>
 
-        <!-----------------------------Footer Section------------------------------------>
+    <!----------------------------------------Footer Section------------------------------------------------>
 
-        <footer class="down-footer">
-            <div class="footer-bottom">
-                &copy; All right reserved | Aman kr Sharma | 28 Sep 2019 EDYODA
-            </div>
+    <footer class="down-footer">
+        <div class="footer-bottom">
+            &copy; All right reserved | Aman kr Sharma | 28 Sep 2019 EDYODA
+        </div>
 
-        </footer>
-
-        <script src="./slick-1.8.1/slick/slick.min.js"></script>
-        <script type="text/javascript" src="./home.js"></script>
-        <script type="text/javascript" src="./index.js"></script>
+    </footer>
+        <!------------------------------ Boostrap CDN Links ------------------------------------------------>
+        <script type="text/javascript" src="./Home.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
-
 </html>
