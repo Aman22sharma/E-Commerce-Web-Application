@@ -1,7 +1,7 @@
 <h4>E-Commerce Shoping Website</h4>
 <h6>Home Page</h6>
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/40789486/112472550-49097e80-8d93-11eb-98e0-24f123c90b17.png" />
+  <img src="https://user-images.githubusercontent.com/40789486/112491921-ca1e4100-8da6-11eb-96cf-936082fb248a.png" />
 </p>
 <h6>Product Details Page</h6>
 <p align="center">
