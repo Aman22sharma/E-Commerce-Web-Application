@@ -5,7 +5,7 @@
 </p>
 <h6>Product Details Page</h6>
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/40789486/112472697-72c2a580-8d93-11eb-8378-10f04f6fae6d.png" />
+  <img src="https://user-images.githubusercontent.com/40789486/112473157-01372700-8d94-11eb-9600-654133cb2fd2.png" />
 </p>
 <h6>Add to cart page/Chekout Page</h6>
 <p align="center">
